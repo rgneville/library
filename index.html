@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>My Library Book Log</title>
+  <meta name="description" content="A library book log web app">
+  <meta name="author" content="Ryan Neville">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Benne&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+  <header>
+    <h1>My Library</h1>
+    <div id="tagline">
+      <p>A listing of books in the library, along with some basic details on the books themselves</p>
+      <button id="addBookButton">Add a Book</button>
+    </div>
+  </header>
+
+  <form id="addBook">
+    <label for="book-name">Name of book:</label>
+    <input type="text" id="book-name">
+    <br>
+    <label for="author">Author:</label>
+    <input type="text" id="author">
+    <br>
+    <label for="pages">Number of pages:</label>
+    <input type="text" id="pages">
+    <br>
+    <label for="read-yet">Read this one yet?</label>
+    <select name="read" id="read-yet">
+      <option value="Y">Yeah, read this one</option>
+      <option value="N">Not yet!</option>
+    </select>
+    <br>  
+    <button type="button" id="submitAddBook">
+      Submit
+    </button>
+    <button type="reset">
+      Reset
+    </button>
+  </form>
+
+  <div id="titles">
+    <div class='titleBoxLarge'>Book Title</div>
+    <div class='titleBoxLarge'>Author</div>
+    <div class='titleBoxSmall'>Pages</div>
+    <div class='titleBoxSmall'>Read?</div>
+  </div>
+  
+  <div id="container"></div>
+ 
+  <script src="library-script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+body {
+    font-family: 'Benne', serif;
+    text-align: center;
+}
+
+header {
+    background-color:rgb(216, 215, 215)
+}
+
+#container {
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    width: 820px;
+    margin: 0 auto;
+}
+
+.infoLine {
+    margin: 6px;
+    display: flex;
+}
+
+#titles {
+    width: 820px;
+    margin: 0 auto;
+    display: flex;
+}
+
+#tagline {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.titleBoxLarge {
+    margin: 6px;
+    width: 300px;
+    font-weight: bold;
+}
+
+.titleBoxSmall {
+    margin: 6px;
+    width: 100px;
+    font-weight: bold;
+}
+
+.innerInfoBoxLarge {
+    background-color:rgb(216, 215, 215);
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    margin-left: 3px;
+    margin-right: 3px;
+    width: 300px;
+}
+
+.innerInfoBoxSmall {
+    background-color:rgb(216, 215, 215);
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    margin-left: 3px;
+    margin-right: 3px;
+    width: 100px;
+}
+
+#addBook {
+    display: none;
+    margin: 5px;
+}
+
+button {
+    font-family: inherit;
+}
