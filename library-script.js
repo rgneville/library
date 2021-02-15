@@ -24,7 +24,7 @@ addToLibrary(firstBook);
 let secondBook = new Book("Slaughterhouse Five", "Kurt Vonnegut", 312, "N");
 addToLibrary(secondBook);
 
-let thirdBook = new Book("Can't Hurt Me: Master Your Mind and Defy the Odds", "David Goggins", 321, "Y");
+let thirdBook = new Book("Can't Hurt Me", "David Goggins", 321, "Y");
 addToLibrary(thirdBook);
 
 function displayBooks () {
@@ -51,12 +51,43 @@ function displayBooks () {
             readBox.innerHTML = myLibrary[i].read;
             newLine.appendChild(readBox);
 
+            const deleteButton = document.createElement('button');
+            deleteButton.type = "button";
+            deleteButton.classList.add('inlineButton');
+            deleteButton.innerHTML = "Delete";
+            deleteButton.addEventListener('click', () => {
+                myLibrary = myLibrary.splice(i,1);
+                container.removeChild(newLine);
+                clearBooks();
+                displayBooks();
+            });
+            newLine.appendChild(deleteButton);
+
+            const readButton = document.createElement('button');
+            readButton.type = "button";
+            readButton.classList.add('inlineButton');
+            readButton.innerHTML = "Read/Unread";
+            readButton.addEventListener('click', () => {
+                readUnread(myLibrary[i]);
+                clearBooks();
+                displayBooks();
+            });
+            newLine.appendChild(readButton);
+
         container.appendChild(newLine);
     }
 }
 
 function clearBooks () {
     container.innerHTML = '';
+}
+
+function readUnread (obj) {
+    if (obj.read === "Y") {
+        obj.read = "N";
+    } else if (obj.read === "N") {
+        obj.read = "Y";
+    }
 }
 
 addBookButton.addEventListener('click', openAddBook);

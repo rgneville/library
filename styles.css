@@ -72,3 +72,8 @@ header {
 button {
     font-family: inherit;
 }
+
+.inlineButton {
+    background-color:rgb(119, 119, 119);
+    margin: 6px;
+}
