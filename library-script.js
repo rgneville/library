@@ -3,6 +3,7 @@ let myLibrary = [];
 const container = document.querySelector('#container');
 const addBookButton = document.querySelector('#addBookButton');
 const submitAddBook = document.querySelector('#submitAddBook');
+const bookTotal = document.querySelector('#totalBooks');
 
 function Book(title, author, pages, read) {
     this.title = title
@@ -23,9 +24,6 @@ addToLibrary(firstBook);
 
 let secondBook = new Book("Slaughterhouse Five", "Kurt Vonnegut", 312, "N");
 addToLibrary(secondBook);
-
-let thirdBook = new Book("Can't Hurt Me", "David Goggins", 321, "Y");
-addToLibrary(thirdBook);
 
 function displayBooks () {
     for (let i = 0; i < myLibrary.length; i++) {
@@ -111,6 +109,8 @@ function openAddBook () {
 function closeAddBook () {
     document.getElementById("addBook").style.display = "none";
 }
+
+bookTotal.innerHTML = `Number of books: ${myLibrary.length}`
 
 displayBooks();
 

@@ -11,7 +11,7 @@ header {
     border-style: solid;
     border-color: black;
     border-width: 2px;
-    width: 820px;
+    width: 860px;
     margin: 0 auto;
 }
 
@@ -21,7 +21,7 @@ header {
 }
 
 #titles {
-    width: 820px;
+    width: 860px;
     margin: 0 auto;
     display: flex;
 }
@@ -33,14 +33,14 @@ header {
 }
 
 .titleBoxLarge {
-    margin: 6px;
+    margin: 3px;
     width: 300px;
     font-weight: bold;
 }
 
 .titleBoxSmall {
-    margin: 6px;
-    width: 100px;
+    margin: 3px;
+    width: 105px;
     font-weight: bold;
 }
 
@@ -75,5 +75,17 @@ button {
 
 .inlineButton {
     background-color:rgb(119, 119, 119);
-    margin: 6px;
+    margin: 3px;
+    width: 96px;
+}
+
+#addBookButton {
+    height: 32px;
+    margin-left: 200px;
+    margin-top: 10px;
+}
+
+#totalBooks{
+    font-size: 12px;
+    color:rgba(119, 119, 119, 0.795);
 }
