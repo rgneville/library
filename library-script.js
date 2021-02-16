@@ -74,6 +74,7 @@ function displayBooks () {
 
         container.appendChild(newLine);
     }
+    bookTotal.innerHTML = `Number of books: ${myLibrary.length}`
 }
 
 function clearBooks () {
