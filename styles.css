@@ -74,9 +74,10 @@ button {
 }
 
 .inlineButton {
-    background-color:rgb(119, 119, 119);
+    background-color:rgb(169, 169, 169);
     margin: 3px;
     width: 96px;
+    height: 30px;
 }
 
 #addBookButton {

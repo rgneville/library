@@ -54,7 +54,7 @@ function displayBooks () {
             deleteButton.classList.add('inlineButton');
             deleteButton.innerHTML = "Delete";
             deleteButton.addEventListener('click', () => {
-                myLibrary = myLibrary.splice(i,1);
+                myLibrary.splice(i, 1);
                 container.removeChild(newLine);
                 clearBooks();
                 displayBooks();
