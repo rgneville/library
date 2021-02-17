@@ -19,12 +19,6 @@ function addToLibrary (obj) {
     myLibrary.push(obj);
 }
 
-let firstBook = new Book("Catch-22", "Joseph Heller", 453, "Y");
-addToLibrary(firstBook);
-
-let secondBook = new Book("Slaughterhouse Five", "Kurt Vonnegut", 312, "N");
-addToLibrary(secondBook);
-
 function displayBooks () {
     for (let i = 0; i < myLibrary.length; i++) {
         const newLine = document.createElement('div');
@@ -56,6 +50,7 @@ function displayBooks () {
             deleteButton.addEventListener('click', () => {
                 myLibrary.splice(i, 1);
                 container.removeChild(newLine);
+                saveToLocalStorage();
                 clearBooks();
                 displayBooks();
             });
@@ -98,6 +93,7 @@ submitAddBook.addEventListener('click', () => {
     let readVar = document.querySelector("#read-yet").value;
     const newBook = new Book(titleVar, authorVar, (parseInt(pagesVar)), readVar);
     addToLibrary(newBook);
+    saveToLocalStorage();
     clearBooks();
     displayBooks();
     closeAddBook();
@@ -111,7 +107,40 @@ function closeAddBook () {
     document.getElementById("addBook").style.display = "none";
 }
 
+function saveToLocalStorage () {
+    localStorage.setItem('savedLibrary', JSON.stringify(myLibrary));
+}
+
+function loadFromLocalStorage () {
+    function lsTest(){  
+        var test = 'test';
+        try {
+            localStorage.setItem(test, test);
+            localStorage.removeItem(test);
+            return true;
+        } catch(e) {
+            return false;
+        }
+    }    
+    if(lsTest() === true){
+        if (localStorage.getItem('savedLibrary') === null) {
+            let firstBook = new Book("Catch-22", "Joseph Heller", 453, "Y");
+            addToLibrary(firstBook);
+            let secondBook = new Book("Slaughterhouse Five", "Kurt Vonnegut", 312, "N");
+            addToLibrary(secondBook);
+        } else {
+            myLibrary = JSON.parse(localStorage.getItem('savedLibrary'));
+        }
+    } else {
+        let firstBook = new Book("Catch-22", "Joseph Heller", 453, "Y");
+        addToLibrary(firstBook);
+        let secondBook = new Book("Slaughterhouse Five", "Kurt Vonnegut", 312, "N");
+        addToLibrary(secondBook);
+    }
+}
+
 bookTotal.innerHTML = `Number of books: ${myLibrary.length}`
 
+loadFromLocalStorage();
 displayBooks();
 
